@@ -1,0 +1,10 @@
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\PPC_ONETBB\BUILD\CMAKEFILES\_CMAKELTOTEST-CXX\BIN\CMAKEFILES\A4BB6914689A2CB95B2DC8130013886A\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/CMakeFiles/_CMakeLTOTest-CXX/src -BD:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/CMakeFiles/_CMakeLTOTest-CXX/bin --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/CMakeFiles/_CMakeLTOTest-CXX/bin/lto-test.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

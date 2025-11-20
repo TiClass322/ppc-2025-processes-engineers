@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\src\format.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\src\os.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\args.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\base.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\chrono.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\compile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\format.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\format-inl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\os.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\ostream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\printf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\ranges.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\std.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\include\fmt\xchar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\README.md" />
+    <None Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-src\ChangeLog.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{84587AD0-E2D7-35A3-802B-D58AB40823A7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F4A50132-C457-3068-A422-6CED100264E7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

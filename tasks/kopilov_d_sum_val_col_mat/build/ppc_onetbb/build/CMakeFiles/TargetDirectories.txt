@@ -1,0 +1,17 @@
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/CMakeFiles/PACKAGE.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/CMakeFiles/INSTALL.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/CMakeFiles/ALL_BUILD.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/CMakeFiles/ZERO_CHECK.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbb/CMakeFiles/tbb.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbb/CMakeFiles/PACKAGE.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbb/CMakeFiles/INSTALL.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbbmalloc/CMakeFiles/tbbmalloc.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbbmalloc/CMakeFiles/PACKAGE.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbbmalloc/CMakeFiles/INSTALL.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbbmalloc_proxy/CMakeFiles/tbbmalloc_proxy.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbbmalloc_proxy/CMakeFiles/PACKAGE.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbbmalloc_proxy/CMakeFiles/INSTALL.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbbbind/CMakeFiles/PACKAGE.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbbbind/CMakeFiles/INSTALL.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/cmake/post_install/CMakeFiles/PACKAGE.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/cmake/post_install/CMakeFiles/INSTALL.dir

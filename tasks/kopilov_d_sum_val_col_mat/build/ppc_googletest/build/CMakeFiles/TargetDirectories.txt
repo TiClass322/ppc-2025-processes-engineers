@@ -1,0 +1,9 @@
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build/CMakeFiles/RUN_TESTS.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build/CMakeFiles/INSTALL.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build/CMakeFiles/ALL_BUILD.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build/CMakeFiles/ZERO_CHECK.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build/googletest/CMakeFiles/gtest.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build/googletest/CMakeFiles/gtest_main.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build/googletest/CMakeFiles/RUN_TESTS.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build/googletest/CMakeFiles/INSTALL.dir
+D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build/googletest/CMakeFiles/ALL_BUILD.dir

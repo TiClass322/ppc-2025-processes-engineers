@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Solution>
+	<Configurations>
+		<BuildType Name="Debug"/>
+		<BuildType Name="Release"/>
+		<BuildType Name="MinSizeRel"/>
+		<BuildType Name="RelWithDebInfo"/>
+		<Platform Name="x64"/>
+	</Configurations>
+	<Project Path="ALL_BUILD.vcxproj" Id="44852fd7-f5b9-301e-8cf5-361fe84a83da" DefaultStartup="true">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="src/tbb/tbb.vcxproj"/>
+		<BuildDependency Project="src/tbbmalloc/tbbmalloc.vcxproj"/>
+		<BuildDependency Project="src/tbbmalloc_proxy/tbbmalloc_proxy.vcxproj"/>
+	</Project>
+	<Project Path="INSTALL.vcxproj" Id="f3b8da64-2c28-3db2-b32c-879c47205e58">
+		<BuildDependency Project="ALL_BUILD.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<Build Solution="Debug|*" Project="false"/>
+		<Build Solution="Release|*" Project="false"/>
+		<Build Solution="MinSizeRel|*" Project="false"/>
+		<Build Solution="RelWithDebInfo|*" Project="false"/>
+	</Project>
+	<Project Path="PACKAGE.vcxproj" Id="d86b6996-bd4a-3a71-9000-4d759966c1ce">
+		<BuildDependency Project="ALL_BUILD.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<Build Solution="Debug|*" Project="false"/>
+		<Build Solution="Release|*" Project="false"/>
+		<Build Solution="MinSizeRel|*" Project="false"/>
+		<Build Solution="RelWithDebInfo|*" Project="false"/>
+	</Project>
+	<Project Path="ZERO_CHECK.vcxproj" Id="78bc8a2a-02ec-3a57-b4de-732727bfed14"/>
+	<Project Path="src/tbb/tbb.vcxproj" Id="b62f6cdd-3e6b-3b59-be6c-aded71a9a965">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/tbbmalloc/tbbmalloc.vcxproj" Id="1d84a64b-17ea-3832-99db-1a7618f43b52">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/tbbmalloc_proxy/tbbmalloc_proxy.vcxproj" Id="093d4512-9d6b-37b0-ad80-20de27652a27">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="src/tbbmalloc/tbbmalloc.vcxproj"/>
+	</Project>
+</Solution>

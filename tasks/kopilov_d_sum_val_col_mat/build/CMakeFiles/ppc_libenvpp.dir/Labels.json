@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/ppc_libenvpp"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/2d215b4c2657c25721119f1c6f13326d/ppc_libenvpp.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/cb1e14d1f2038a4a3e52676496dad6c5/ppc_libenvpp-complete.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/2e9950d26f019cacfb016b73a40eb9e6/ppc_libenvpp-build.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/2e9950d26f019cacfb016b73a40eb9e6/ppc_libenvpp-configure.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/2e9950d26f019cacfb016b73a40eb9e6/ppc_libenvpp-download.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/2e9950d26f019cacfb016b73a40eb9e6/ppc_libenvpp-install.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/2e9950d26f019cacfb016b73a40eb9e6/ppc_libenvpp-mkdir.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/2e9950d26f019cacfb016b73a40eb9e6/ppc_libenvpp-patch.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/2e9950d26f019cacfb016b73a40eb9e6/ppc_libenvpp-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"ppc_libenvpp"
+		],
+		"name" : "ppc_libenvpp"
+	}
+}

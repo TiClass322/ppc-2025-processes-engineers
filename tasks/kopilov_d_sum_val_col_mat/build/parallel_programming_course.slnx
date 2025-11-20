@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Solution>
+	<Configurations>
+		<BuildType Name="Debug"/>
+		<BuildType Name="Release"/>
+		<BuildType Name="MinSizeRel"/>
+		<BuildType Name="RelWithDebInfo"/>
+		<Platform Name="x64"/>
+	</Configurations>
+	<Project Path="ALL_BUILD.vcxproj" Id="d1067050-d860-30fd-a14c-07c535f52b1b" DefaultStartup="true">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_func_tests.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_2_mpi.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_2_seq.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_3_mpi.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_3_seq.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_mpi.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_seq.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_all.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_omp.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_seq.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_stl.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_tbb.vcxproj"/>
+		<BuildDependency Project="tasks/kopilov_d_sum_val_col_mat_mpi.vcxproj"/>
+		<BuildDependency Project="tasks/kopilov_d_sum_val_col_mat_seq.vcxproj"/>
+		<BuildDependency Project="tasks/ppc_func_tests.vcxproj"/>
+		<BuildDependency Project="ppc_googletest.vcxproj"/>
+		<BuildDependency Project="ppc_json.vcxproj"/>
+		<BuildDependency Project="ppc_libenvpp.vcxproj"/>
+		<BuildDependency Project="ppc_onetbb.vcxproj"/>
+		<BuildDependency Project="tasks/ppc_perf_tests.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="INSTALL.vcxproj" Id="36b27fd2-9dab-375e-83a4-6690bf9cdb36">
+		<BuildDependency Project="ALL_BUILD.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<Build Solution="Debug|*" Project="false"/>
+		<Build Solution="Release|*" Project="false"/>
+		<Build Solution="MinSizeRel|*" Project="false"/>
+		<Build Solution="RelWithDebInfo|*" Project="false"/>
+	</Project>
+	<Project Path="ZERO_CHECK.vcxproj" Id="9b1a8c03-79d7-32cf-896d-f8afb83cef5f"/>
+	<Project Path="modules/core_func_tests.vcxproj" Id="f750adae-920f-36a3-ac53-942833c04275">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="modules/core_module_lib.vcxproj" Id="9d3d609e-92c5-324d-90ae-e19079d73ebd">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="ppc_googletest.vcxproj"/>
+		<BuildDependency Project="ppc_json.vcxproj"/>
+		<BuildDependency Project="ppc_libenvpp.vcxproj"/>
+		<BuildDependency Project="ppc_onetbb.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/example_processes_2_mpi.vcxproj" Id="799cb599-d68c-384a-a88f-2d03f5126438">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/example_processes_2_seq.vcxproj" Id="8fbbf1a9-258c-3179-a2e7-5d7dae28e36e">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/example_processes_3_mpi.vcxproj" Id="36a5a70e-c710-3d15-96f8-b1a3e0c74e0e">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/example_processes_3_seq.vcxproj" Id="2261a7d0-c8c5-3020-a42a-1b88e147f125">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/example_processes_mpi.vcxproj" Id="60fcbdd9-d865-346b-97ca-aec98eede975">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/example_processes_seq.vcxproj" Id="07fa1e82-caa5-3021-a608-8fa97ec988f0">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/example_threads_all.vcxproj" Id="9feadce7-4e5e-3e4b-827b-61720552de27">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/example_threads_omp.vcxproj" Id="a5246f75-d9ee-3469-b2b6-5b20e982cf24">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/example_threads_seq.vcxproj" Id="6ea8d628-b8fa-3f61-ba63-dc72180548fd">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/example_threads_stl.vcxproj" Id="ba10c9ab-cb6a-31b6-a4b0-065e2f5869fe">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/example_threads_tbb.vcxproj" Id="017663eb-ef13-36e7-b823-e1e134a8206a">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/kopilov_d_sum_val_col_mat_mpi.vcxproj" Id="22730452-9f7c-3bde-9492-59409c48bd60">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/kopilov_d_sum_val_col_mat_seq.vcxproj" Id="35a9bba0-4730-3860-b6bd-e69786a5824e">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="tasks/ppc_func_tests.vcxproj" Id="0b26677d-c864-37c8-bd2a-edb075b11452">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_2_mpi.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_2_seq.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_3_mpi.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_3_seq.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_mpi.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_seq.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_all.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_omp.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_seq.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_stl.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_tbb.vcxproj"/>
+		<BuildDependency Project="tasks/kopilov_d_sum_val_col_mat_mpi.vcxproj"/>
+		<BuildDependency Project="tasks/kopilov_d_sum_val_col_mat_seq.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="ppc_googletest.vcxproj" Id="0dd1231d-25cf-39c8-b70d-7ea12f0e31b9">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="ppc_json.vcxproj" Id="6105e846-727a-321d-a01d-6109987e973e">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="ppc_libenvpp.vcxproj" Id="71984d96-5d80-346e-a86e-84295d3fd94f">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="ppc_onetbb.vcxproj" Id="26b84c9c-fa1a-3379-aac4-7b34a035c6bc">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="tasks/ppc_perf_tests.vcxproj" Id="e756804c-9168-3290-974b-1da95bd3ff82">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="modules/core_module_lib.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_2_mpi.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_2_seq.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_3_mpi.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_3_seq.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_mpi.vcxproj"/>
+		<BuildDependency Project="tasks/example_processes_seq.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_all.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_omp.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_seq.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_stl.vcxproj"/>
+		<BuildDependency Project="tasks/example_threads_tbb.vcxproj"/>
+		<BuildDependency Project="tasks/kopilov_d_sum_val_col_mat_mpi.vcxproj"/>
+		<BuildDependency Project="tasks/kopilov_d_sum_val_col_mat_seq.vcxproj"/>
+		<BuildDependency Project="modules/stb_image.vcxproj"/>
+	</Project>
+	<Project Path="modules/stb_image.vcxproj" Id="79c93aff-c9de-3c98-933e-a023d5a79469">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+</Solution>

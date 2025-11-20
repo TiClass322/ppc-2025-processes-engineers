@@ -1,60 +1,39 @@
 #include "kopilov_d_sum_val_col_mat/seq/include/ops_seq.hpp"
 
-#include <numeric>
 #include <vector>
 
 #include "kopilov_d_sum_val_col_mat/common/include/common.hpp"
-#include "util/include/util.hpp"
 
 namespace kopilov_d_sum_val_col_mat {
 
 KopilovDSumValColMatSEQ::KopilovDSumValColMatSEQ(const InType &in) {
   SetTypeOfTask(GetStaticTypeOfTask());
   GetInput() = in;
-  GetOutput() = 0;
+  GetOutput().resize(GetInput().cols, 0);
 }
 
 bool KopilovDSumValColMatSEQ::ValidationImpl() {
-  return (GetInput() > 0) && (GetOutput() == 0);
+  return GetInput().rows > 0 && GetInput().cols > 0 &&
+         GetInput().data.size() == (size_t)GetInput().rows * GetInput().cols &&
+         GetOutput().size() == (size_t)GetInput().cols;
 }
 
 bool KopilovDSumValColMatSEQ::PreProcessingImpl() {
-  GetOutput() = 2 * GetInput();
-  return GetOutput() > 0;
+  for (size_t i = 0; i < GetOutput().size(); ++i) {
+    GetOutput()[i] = 0;
+  }
+  return true;
 }
 
 bool KopilovDSumValColMatSEQ::RunImpl() {
-  if (GetInput() == 0) {
-    return false;
-  }
-
-  for (InType i = 0; i < GetInput(); i++) {
-    for (InType j = 0; j < GetInput(); j++) {
-      for (InType k = 0; k < GetInput(); k++) {
-        std::vector<InType> tmp(i + j + k, 1);
-        GetOutput() += std::accumulate(tmp.begin(), tmp.end(), 0);
-        GetOutput() -= i + j + k;
-      }
+  for (int j = 0; j < GetInput().cols; ++j) {
+    for (int i = 0; i < GetInput().rows; ++i) {
+      GetOutput()[j] += GetInput().data[i * GetInput().cols + j];
     }
   }
-
-  const int num_threads = ppc::util::GetNumThreads();
-  GetOutput() *= num_threads;
-
-  int counter = 0;
-  for (int i = 0; i < num_threads; i++) {
-    counter++;
-  }
-
-  if (counter != 0) {
-    GetOutput() /= counter;
-  }
-  return GetOutput() > 0;
+  return true;
 }
 
-bool KopilovDSumValColMatSEQ::PostProcessingImpl() {
-  GetOutput() -= GetInput();
-  return GetOutput() > 0;
-}
+bool KopilovDSumValColMatSEQ::PostProcessingImpl() { return true; }
 
 }  // namespace kopilov_d_sum_val_col_mat

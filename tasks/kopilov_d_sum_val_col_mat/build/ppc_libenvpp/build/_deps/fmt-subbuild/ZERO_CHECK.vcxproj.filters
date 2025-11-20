@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-subbuild\CMakeFiles\d3a1ea29fded2350ee7ecaf77c8da326\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{882DAEEC-3CC0-3E39-BDB1-CFBCA6A30CAE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

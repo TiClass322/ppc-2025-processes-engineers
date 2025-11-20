@@ -1,0 +1,12 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/cmake_install.cmake",
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbb/cmake_install.cmake",
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbbmalloc/cmake_install.cmake",
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbbmalloc_proxy/cmake_install.cmake",
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/src/tbbbind/cmake_install.cmake",
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_onetbb/build/cmake/post_install/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

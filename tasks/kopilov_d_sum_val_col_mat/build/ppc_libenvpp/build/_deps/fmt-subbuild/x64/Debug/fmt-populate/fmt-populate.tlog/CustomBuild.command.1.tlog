@@ -1,0 +1,150 @@
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\PPC_LIBENVPP\BUILD\_DEPS\FMT-SUBBUILD\CMAKEFILES\D6D23209B19984CA65C13623F824E4CE\FMT-POPULATE-MKDIR.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/fmt-populate-prefix/tmp/fmt-populate-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/Debug/fmt-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\PPC_LIBENVPP\BUILD\_DEPS\FMT-SUBBUILD\CMAKEFILES\D6D23209B19984CA65C13623F824E4CE\FMT-POPULATE-DOWNLOAD.RULE
+setlocal
+cd D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -rf D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory D:/PPC/ppc-2025-processes-engineers/3rdparty/libenvpp/external/fmt D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/Debug/fmt-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\PPC_LIBENVPP\BUILD\_DEPS\FMT-SUBBUILD\CMAKEFILES\D6D23209B19984CA65C13623F824E4CE\FMT-POPULATE-UPDATE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/Debug/fmt-populate-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\PPC_LIBENVPP\BUILD\_DEPS\FMT-SUBBUILD\CMAKEFILES\D6D23209B19984CA65C13623F824E4CE\FMT-POPULATE-PATCH.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/Debug/fmt-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\PPC_LIBENVPP\BUILD\_DEPS\FMT-SUBBUILD\CMAKEFILES\D6D23209B19984CA65C13623F824E4CE\FMT-POPULATE-CONFIGURE.RULE
+setlocal
+cd D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/Debug/fmt-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\PPC_LIBENVPP\BUILD\_DEPS\FMT-SUBBUILD\CMAKEFILES\D6D23209B19984CA65C13623F824E4CE\FMT-POPULATE-BUILD.RULE
+setlocal
+cd D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/Debug/fmt-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\PPC_LIBENVPP\BUILD\_DEPS\FMT-SUBBUILD\CMAKEFILES\D6D23209B19984CA65C13623F824E4CE\FMT-POPULATE-INSTALL.RULE
+setlocal
+cd D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/Debug/fmt-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\PPC_LIBENVPP\BUILD\_DEPS\FMT-SUBBUILD\CMAKEFILES\D6D23209B19984CA65C13623F824E4CE\FMT-POPULATE-TEST.RULE
+setlocal
+cd D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_libenvpp\build\_deps\fmt-build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/Debug/fmt-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\PPC_LIBENVPP\BUILD\_DEPS\FMT-SUBBUILD\CMAKEFILES\DB693EFA464FDDB89A86F1795529A183\FMT-POPULATE-COMPLETE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/Debug/fmt-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/fmt-populate-prefix/src/fmt-populate-stamp/Debug/fmt-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\PPC_LIBENVPP\BUILD\_DEPS\FMT-SUBBUILD\CMAKEFILES\D3A1EA29FDED2350EE7ECAF77C8DA326\FMT-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\PPC_LIBENVPP\BUILD\_DEPS\FMT-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild -BD:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild --check-stamp-file D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

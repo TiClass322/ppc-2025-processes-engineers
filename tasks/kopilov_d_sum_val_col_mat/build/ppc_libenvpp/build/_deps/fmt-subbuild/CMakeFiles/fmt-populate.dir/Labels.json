@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/fmt-populate"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/d3a1ea29fded2350ee7ecaf77c8da326/fmt-populate.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/db693efa464fddb89a86f1795529a183/fmt-populate-complete.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/d6d23209b19984ca65c13623f824e4ce/fmt-populate-build.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/d6d23209b19984ca65c13623f824e4ce/fmt-populate-configure.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/d6d23209b19984ca65c13623f824e4ce/fmt-populate-download.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/d6d23209b19984ca65c13623f824e4ce/fmt-populate-install.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/d6d23209b19984ca65c13623f824e4ce/fmt-populate-mkdir.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/d6d23209b19984ca65c13623f824e4ce/fmt-populate-patch.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/d6d23209b19984ca65c13623f824e4ce/fmt-populate-test.rule"
+		},
+		{
+			"file" : "D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-subbuild/CMakeFiles/d6d23209b19984ca65c13623f824e4ce/fmt-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"fmt-populate"
+		],
+		"name" : "fmt-populate"
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/cmake_install.cmake",
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/scoreboard/cmake_install.cmake",
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/docs/cmake_install.cmake",
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/modules/cmake_install.cmake",
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/tasks/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

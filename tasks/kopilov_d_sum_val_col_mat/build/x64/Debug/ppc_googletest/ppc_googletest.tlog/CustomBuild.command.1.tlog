@@ -1,0 +1,128 @@
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\CMAKEFILES\286361A9776AD9BD2AA8A60D58F54D1E\PPC_GOOGLETEST-MKDIR.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/tmp/ppc_googletest-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/src/ppc_googletest-stamp/Debug/ppc_googletest-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\CMAKEFILES\286361A9776AD9BD2AA8A60D58F54D1E\PPC_GOOGLETEST-DOWNLOAD.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/src/ppc_googletest-stamp/Debug/ppc_googletest-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\CMAKEFILES\286361A9776AD9BD2AA8A60D58F54D1E\PPC_GOOGLETEST-UPDATE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/src/ppc_googletest-stamp/Debug/ppc_googletest-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\CMAKEFILES\286361A9776AD9BD2AA8A60D58F54D1E\PPC_GOOGLETEST-PATCH.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/src/ppc_googletest-stamp/Debug/ppc_googletest-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\CMAKEFILES\286361A9776AD9BD2AA8A60D58F54D1E\PPC_GOOGLETEST-CONFIGURE.RULE
+setlocal
+cd D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_googletest\build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_C_COMPILER=D:/Visual_Studio/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/cl.exe -DCMAKE_CXX_COMPILER=D:/Visual_Studio/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/cl.exe -DCMAKE_C_COMPILER_LAUNCHER= -DCMAKE_CXX_COMPILER_LAUNCHER= -DCMAKE_CXX_STANDARD=23 -DCMAKE_CXX_STANDARD_REQUIRED=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS=-w -DCMAKE_CXX_FLAGS=-w -DBUILD_GMOCK=OFF -Dgtest_force_shared_crt=ON "-GVisual Studio 18 2026" -DCMAKE_GENERATOR_INSTANCE:INTERNAL=D:/Visual_Studio -S D:/PPC/ppc-2025-processes-engineers/3rdparty/googletest -B D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/src/ppc_googletest-stamp/Debug/ppc_googletest-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\CMAKEFILES\286361A9776AD9BD2AA8A60D58F54D1E\PPC_GOOGLETEST-BUILD.RULE
+setlocal
+cd D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_googletest\build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" --build D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build --config Debug --parallel
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/src/ppc_googletest-stamp/Debug/ppc_googletest-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\CMAKEFILES\286361A9776AD9BD2AA8A60D58F54D1E\PPC_GOOGLETEST-INSTALL.RULE
+setlocal
+cd D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\ppc_googletest\build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" --install D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build --config Debug --prefix D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/install
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/src/ppc_googletest-stamp/Debug/ppc_googletest-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\CMAKEFILES\CB1E14D1F2038A4A3E52676496DAD6C5\PPC_GOOGLETEST-COMPLETE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/Debug/ppc_googletest-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/src/ppc_googletest-stamp/Debug/ppc_googletest-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\TASKS\KOPILOV_D_SUM_VAL_COL_MAT\BUILD\CMAKEFILES\2D215B4C2657C25721119F1C6F13326D\PPC_GOOGLETEST.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\PPC\PPC-2025-PROCESSES-ENGINEERS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/PPC/ppc-2025-processes-engineers -BD:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build --check-stamp-file D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

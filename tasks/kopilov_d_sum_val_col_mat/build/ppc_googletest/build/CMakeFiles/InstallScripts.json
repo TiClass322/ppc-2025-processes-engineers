@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build/cmake_install.cmake",
+		"D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_googletest/build/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

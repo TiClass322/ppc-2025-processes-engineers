@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\CMakeFiles\4ec3c3c659498f632e3210dd869979d6\ppc_json-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\CMakeFiles\4ec3c3c659498f632e3210dd869979d6\ppc_json-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\CMakeFiles\4ec3c3c659498f632e3210dd869979d6\ppc_json-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\CMakeFiles\4ec3c3c659498f632e3210dd869979d6\ppc_json-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\CMakeFiles\4ec3c3c659498f632e3210dd869979d6\ppc_json-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\CMakeFiles\4ec3c3c659498f632e3210dd869979d6\ppc_json-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\CMakeFiles\4ec3c3c659498f632e3210dd869979d6\ppc_json-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\CMakeFiles\cb1e14d1f2038a4a3e52676496dad6c5\ppc_json-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\CMakeFiles\2d215b4c2657c25721119f1c6f13326d\ppc_json.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\PPC\ppc-2025-processes-engineers\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\PPC\ppc-2025-processes-engineers\tasks\kopilov_d_sum_val_col_mat\build\CMakeFiles\ppc_json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{542A164F-005D-397B-BA64-45A0560286DC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
