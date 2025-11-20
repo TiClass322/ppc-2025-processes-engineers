@@ -28,8 +28,8 @@ TEST_P(KopilovDSumValColMatPerfTests, RunPerfModes) {
   ExecuteTest(GetParam());
 }
 
-const auto kAllPerfTasks =
-    ppc::util::MakeAllPerfTasks<InType, KopilovDSumValColMatMPI, KopilovDSumValColMatSEQ>(PPC_SETTINGS_kopilov_d_sum_val_col_mat);
+const auto kAllPerfTasks = ppc::util::MakeAllPerfTasks<InType, KopilovDSumValColMatMPI, KopilovDSumValColMatSEQ>(
+    PPC_SETTINGS_kopilov_d_sum_val_col_mat);
 
 const auto kGtestValues = ppc::util::TupleToGTestValues(kAllPerfTasks);
 
