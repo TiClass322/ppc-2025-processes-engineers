@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <stb/stb_image.h>
 
 #include <algorithm>
 #include <array>
@@ -19,75 +20,67 @@
 
 namespace kopilov_d_sum_val_col_mat {
 
-class KopilovDSumValColMatTests
-    : public ppc::util::BaseRunFuncTests<InType, OutType, TestType> {
+class KopilovDSumValColMatTests : public ppc::util::BaseRunFuncTests<InType, OutType, TestType> {
  public:
-  static std::string PrintTestParam(const TestType& test_param) {
+  static std::string PrintTestParam(const TestType &test_param) {
     return std::to_string(std::get<0>(test_param)) + "_" + std::get<1>(test_param);
   }
 
  protected:
-  // Генерация входной матрицы
   void SetUp() override {
-    const auto params =
-        std::get<static_cast<std::size_t>(ppc::util::GTestParamIndex::kTestParams)>(
-            GetParam());
-    int size = std::get<0>(params);  // квадратная матрица size x size
+    int width = -1;
+    int height = -1;
+    int channels = -1;
+    std::vector<uint8_t> img;
+    // Read image in RGB to ensure consistent channel count
+    {
+      std::string abs_path = ppc::util::GetAbsoluteTaskPath(PPC_ID_kopilov_d_sum_val_col_mat, "pic.jpg");
+      auto *data = stbi_load(abs_path.c_str(), &width, &height, &channels, STBI_rgb);
+      if (data == nullptr) {
+        throw std::runtime_error("Failed to load image: " + std::string(stbi_failure_reason()));
+      }
+      channels = STBI_rgb;
+      img = std::vector<uint8_t>(data, data + (static_cast<ptrdiff_t>(width * height * channels)));
+      stbi_image_free(data);
+      if (std::cmp_not_equal(width, height)) {
+        throw std::runtime_error("width != height: ");
+      }
+    }
 
-    input_.rows = size;
-    input_.cols = size;
-    input_.data.resize(size * size);
-
-    // Заполняем детерминированно, чтобы SEQ и MPI совпадали
-    std::iota(input_.data.begin(), input_.data.end(), 1);
-
-    // Ожидаемый результат
-    expected_output_.resize(size, 0);
-
-    for (int j = 0; j < size; ++j)
-      for (int i = 0; i < size; ++i)
-        expected_output_[j] += input_.data[i * size + j];
+    TestType params = std::get<static_cast<std::size_t>(ppc::util::GTestParamIndex::kTestParams)>(GetParam());
+    input_data_ = width - height + std::min(std::accumulate(img.begin(), img.end(), 0), channels);
   }
 
-  bool CheckTestOutputData(OutType& output_data) final {
-    return output_data == expected_output_;
+  bool CheckTestOutputData(OutType &output_data) final {
+    return (input_data_ == output_data);
   }
 
-  InType GetTestInputData() final { return input_; }
+  InType GetTestInputData() final {
+    return input_data_;
+  }
 
  private:
-  InType input_;
-  OutType expected_output_;
+  InType input_data_ = 0;
 };
 
 namespace {
 
-TEST_P(KopilovDSumValColMatTests, SumColumnsMatrix) {
+TEST_P(KopilovDSumValColMatTests, MatmulFromPic) {
   ExecuteTest(GetParam());
 }
 
-// Параметры тестов
-const std::array<TestType, 3> kTestParam = {
-    std::make_tuple(3, "3"),
-    std::make_tuple(5, "5"),
-    std::make_tuple(7, "7"),
-};
+const std::array<TestType, 3> kTestParam = {std::make_tuple(3, "3"), std::make_tuple(5, "5"), std::make_tuple(7, "7")};
 
-// Список MPI и SEQ задач
-const auto kTasksList = std::tuple_cat(
-    ppc::util::AddFuncTask<KopilovDSumValColMatMPI, InType>(
-        kTestParam, PPC_SETTINGS_kopilov_d_sum_val_col_mat),
-    ppc::util::AddFuncTask<KopilovDSumValColMatSEQ, InType>(
-        kTestParam, PPC_SETTINGS_kopilov_d_sum_val_col_mat));
+const auto kTestTasksList = std::tuple_cat(
+    ppc::util::AddFuncTask<KopilovDSumValColMatMPI, InType>(kTestParam, PPC_SETTINGS_kopilov_d_sum_val_col_mat),
+    ppc::util::AddFuncTask<KopilovDSumValColMatSEQ, InType>(kTestParam, PPC_SETTINGS_kopilov_d_sum_val_col_mat));
 
-const auto kValues = ppc::util::ExpandToValues(kTasksList);
-const auto kTestName =
-    KopilovDSumValColMatTests::PrintFuncTestName<KopilovDSumValColMatTests>;
+const auto kGtestValues = ppc::util::ExpandToValues(kTestTasksList);
 
-INSTANTIATE_TEST_SUITE_P(FunctionalTests,
-                         KopilovDSumValColMatTests,
-                         kValues,
-                         kTestName);
+const auto kPerfTestName = KopilovDSumValColMatTests::PrintFuncTestName<KopilovDSumValColMatTests>;
+
+INSTANTIATE_TEST_SUITE_P(PicMatrixTests, KopilovDSumValColMatTests, kGtestValues, kPerfTestName);
 
 }  // namespace
+
 }  // namespace kopilov_d_sum_val_col_mat

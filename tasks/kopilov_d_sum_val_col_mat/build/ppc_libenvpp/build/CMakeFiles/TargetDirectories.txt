@@ -1,7 +1,0 @@
-D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/CMakeFiles/libenvpp.dir
-D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/CMakeFiles/INSTALL.dir
-D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/CMakeFiles/ALL_BUILD.dir
-D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/CMakeFiles/ZERO_CHECK.dir
-D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-build/CMakeFiles/fmt.dir
-D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-build/CMakeFiles/INSTALL.dir
-D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_libenvpp/build/_deps/fmt-build/CMakeFiles/ALL_BUILD.dir

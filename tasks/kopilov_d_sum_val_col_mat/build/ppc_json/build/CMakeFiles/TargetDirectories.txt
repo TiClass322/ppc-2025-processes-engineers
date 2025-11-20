@@ -1,4 +1,0 @@
-D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_json/build/CMakeFiles/PACKAGE.dir
-D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_json/build/CMakeFiles/INSTALL.dir
-D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_json/build/CMakeFiles/ALL_BUILD.dir
-D:/PPC/ppc-2025-processes-engineers/tasks/kopilov_d_sum_val_col_mat/build/ppc_json/build/CMakeFiles/ZERO_CHECK.dir
