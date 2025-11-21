@@ -1,60 +1,55 @@
 #include "kopilov_d_sum_val_col_mat/seq/include/ops_seq.hpp"
 
-#include <numeric>
 #include <vector>
+#include <stdexcept>
 
 #include "kopilov_d_sum_val_col_mat/common/include/common.hpp"
-#include "util/include/util.hpp"
 
 namespace kopilov_d_sum_val_col_mat {
 
-KopilovDSumValColMatSEQ::KopilovDSumValColMatSEQ(const InType &in) {
+KopilovDSumValColMatSEQ::KopilovDSumValColMatSEQ(const InType& in) {
   SetTypeOfTask(GetStaticTypeOfTask());
   GetInput() = in;
-  GetOutput() = 0;
+
+  GetOutput() = OutType{};
 }
 
 bool KopilovDSumValColMatSEQ::ValidationImpl() {
-  return (GetInput() > 0) && (GetOutput() == 0);
+  const auto& in = GetInput();
+
+  if (in.rows <= 0 || in.cols <= 0) return false;
+
+  if ((int)in.data.size() != in.rows * in.cols) return false;
+
+  return true;
 }
 
 bool KopilovDSumValColMatSEQ::PreProcessingImpl() {
-  GetOutput() = 2 * GetInput();
-  return GetOutput() > 0;
+  auto& out = GetOutput();
+  out.col_sum.assign(GetInput().cols, 0.0);
+  return true;
 }
 
 bool KopilovDSumValColMatSEQ::RunImpl() {
-  if (GetInput() == 0) {
-    return false;
-  }
+  const auto& in = GetInput();
+  auto& out = GetOutput().col_sum;
 
-  for (InType i = 0; i < GetInput(); i++) {
-    for (InType j = 0; j < GetInput(); j++) {
-      for (InType k = 0; k < GetInput(); k++) {
-        std::vector<InType> tmp(i + j + k, 1);
-        GetOutput() += std::accumulate(tmp.begin(), tmp.end(), 0);
-        GetOutput() -= i + j + k;
-      }
+  const int rows = in.rows;
+  const int cols = in.cols;
+
+  const auto& mat = in.data;
+
+  for (int r = 0; r < rows; r++) {
+    for (int c = 0; c < cols; c++) {
+      out[c] += mat[r * cols + c];
     }
   }
 
-  const int num_threads = ppc::util::GetNumThreads();
-  GetOutput() *= num_threads;
-
-  int counter = 0;
-  for (int i = 0; i < num_threads; i++) {
-    counter++;
-  }
-
-  if (counter != 0) {
-    GetOutput() /= counter;
-  }
-  return GetOutput() > 0;
+  return true;
 }
 
 bool KopilovDSumValColMatSEQ::PostProcessingImpl() {
-  GetOutput() -= GetInput();
-  return GetOutput() > 0;
+  return true;
 }
 
 }  // namespace kopilov_d_sum_val_col_mat
