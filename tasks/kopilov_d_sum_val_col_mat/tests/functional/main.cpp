@@ -32,7 +32,8 @@ class KopilovDSumValColMatTests : public ppc::util::BaseRunFuncTests<InType, Out
 
     for (int row = 0; row < matrixSize; ++row) {
       for (int col = 0; col < matrixSize; ++col) {
-        input.data[static_cast<std::size_t>(row) * static_cast<std::size_t>(matrixSize) + static_cast<std::size_t>(col)] = static_cast<double>(row + col);
+        input.data[static_cast<std::size_t>(row) * static_cast<std::size_t>(matrixSize) +
+                   static_cast<std::size_t>(col)] = static_cast<double>(row + col);
       }
     }
 
@@ -46,7 +47,9 @@ class KopilovDSumValColMatTests : public ppc::util::BaseRunFuncTests<InType, Out
     }
   }
 
-  InType GetTestInputData() override { return input; }
+  InType GetTestInputData() override {
+    return input;
+  }
 
   bool CheckTestOutputData(OutType &output_data) override {
     if (output_data.col_sum.size() != expected.col_sum.size()) {
@@ -68,7 +71,9 @@ class KopilovDSumValColMatTests : public ppc::util::BaseRunFuncTests<InType, Out
 
 namespace {
 
-TEST_P(KopilovDSumValColMatTests, ColumnSumTest) { ExecuteTest(GetParam()); }
+TEST_P(KopilovDSumValColMatTests, ColumnSumTest) {
+  ExecuteTest(GetParam());
+}
 
 const std::array<TestType, 3> kTestParam = {std::make_tuple(3, "3"), std::make_tuple(5, "5"), std::make_tuple(7, "7")};
 

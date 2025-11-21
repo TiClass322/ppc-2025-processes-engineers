@@ -24,7 +24,8 @@ class KopilovDSumValColMatPerfTests : public ppc::util::BaseRunPerfTests<InType,
 
     for (int row = 0; row < kMatrixSize; ++row) {
       for (int col = 0; col < kMatrixSize; ++col) {
-        inputData.data[static_cast<std::size_t>(row) * static_cast<std::size_t>(kMatrixSize) + static_cast<std::size_t>(col)] = static_cast<double>(row + col);
+        inputData.data[static_cast<std::size_t>(row) * static_cast<std::size_t>(kMatrixSize) +
+                       static_cast<std::size_t>(col)] = static_cast<double>(row + col);
       }
     }
 
@@ -38,18 +39,26 @@ class KopilovDSumValColMatPerfTests : public ppc::util::BaseRunPerfTests<InType,
     }
   }
 
-  InType GetTestInputData() override { return inputData; }
+  InType GetTestInputData() override {
+    return inputData;
+  }
 
   bool CheckTestOutputData(OutType &output_data) override {
-    if (output_data.col_sum.size() != expectedOutput.col_sum.size()) return false;
+    if (output_data.col_sum.size() != expectedOutput.col_sum.size()) {
+      return false;
+    }
     for (std::size_t i = 0; i < expectedOutput.col_sum.size(); ++i) {
-      if (std::abs(output_data.col_sum[i] - expectedOutput.col_sum[i]) > 1e-9) return false;
+      if (std::abs(output_data.col_sum[i] - expectedOutput.col_sum[i]) > 1e-9) {
+        return false;
+      }
     }
     return true;
   }
 };
 
-TEST_P(KopilovDSumValColMatPerfTests, RunPerfModes) { ExecuteTest(GetParam()); }
+TEST_P(KopilovDSumValColMatPerfTests, RunPerfModes) {
+  ExecuteTest(GetParam());
+}
 
 const auto kAllPerfTasks = ppc::util::MakeAllPerfTasks<InType, KopilovDSumValColMatMPI, KopilovDSumValColMatSEQ>(
     PPC_SETTINGS_kopilov_d_sum_val_col_mat);
