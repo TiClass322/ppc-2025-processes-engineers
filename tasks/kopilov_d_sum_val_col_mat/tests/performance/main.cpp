@@ -9,7 +9,7 @@ namespace kopilov_d_sum_val_col_mat {
 
 class KopilovDSumValColMatPerfTests : public ppc::util::BaseRunPerfTests<InType, OutType> {
  protected:
-  int size_ = 1000;
+  int size_ = 100000;
   InType input_data_;
   OutType expected_;
 
