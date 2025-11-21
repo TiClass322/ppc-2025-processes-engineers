@@ -100,7 +100,7 @@ std::vector<int> отображает данные(размер, 0);
 // ...
 
 // Распределяет данные из корневого каталога по всем процессам
-MPI_Scatterv(sendbuf_ptr, sendcounts.data(), displs.data(), MPI_DOUBLE, recvbuf.data(), recvcount, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+MPI_Scatterv(sendbuf_ptr, send_counts.data(), displs.data(), MPI_DOUBLE, recvbuf.data(), recv_count, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
 // Каждый процесс вычисляет свою локальную сумму
 std::vector<double> local_col_sum(cols, 0.0);

@@ -1,7 +1,6 @@
 #include "kopilov_d_sum_val_col_mat/seq/include/ops_seq.hpp"
 
 #include <cstddef>
-#include <stdexcept>
 #include <vector>
 
 #include "kopilov_d_sum_val_col_mat/common/include/common.hpp"
@@ -17,11 +16,11 @@ KopilovDSumValColMatSEQ::KopilovDSumValColMatSEQ(const InType &in) {
 bool KopilovDSumValColMatSEQ::ValidationImpl() {
   const int rows = GetInput().rows;
   const int cols = GetInput().cols;
-  const std::size_t expectedSize = static_cast<std::size_t>(rows) * static_cast<std::size_t>(cols);
+  const std::size_t expected_size = static_cast<std::size_t>(rows) * static_cast<std::size_t>(cols);
   if (rows <= 0 || cols <= 0) {
     return false;
   }
-  if (GetInput().data.size() != expectedSize) {
+  if (GetInput().data.size() != expected_size) {
     return false;
   }
   return true;
@@ -42,7 +41,7 @@ bool KopilovDSumValColMatSEQ::RunImpl() {
   for (int row = 0; row < rows; ++row) {
     for (int col = 0; col < cols; ++col) {
       GetOutput().col_sum[static_cast<std::size_t>(col)] +=
-          matrix[static_cast<std::size_t>(row) * static_cast<std::size_t>(cols) + static_cast<std::size_t>(col)];
+          matrix[(static_cast<std::size_t>(row) * static_cast<std::size_t>(cols)) + static_cast<std::size_t>(col)];
     }
   }
 

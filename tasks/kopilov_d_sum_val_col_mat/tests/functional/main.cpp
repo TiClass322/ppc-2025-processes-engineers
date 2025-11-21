@@ -3,7 +3,6 @@
 #include <array>
 #include <cmath>
 #include <cstddef>
-#include <numeric>
 #include <string>
 #include <tuple>
 #include <vector>
@@ -24,39 +23,39 @@ class KopilovDSumValColMatTests : public ppc::util::BaseRunFuncTests<InType, Out
  protected:
   void SetUp() override {
     const TestType params = std::get<static_cast<std::size_t>(ppc::util::GTestParamIndex::kTestParams)>(GetParam());
-    matrixSize = std::get<0>(params);
+    matrix_size_ = std::get<0>(params);
 
-    input.rows = matrixSize;
-    input.cols = matrixSize;
-    input.data.resize(static_cast<std::size_t>(matrixSize) * static_cast<std::size_t>(matrixSize));
+    input_.rows = matrix_size_;
+    input_.cols = matrix_size_;
+    input_.data.resize(static_cast<std::size_t>(matrix_size_) * static_cast<std::size_t>(matrix_size_));
 
-    for (int row = 0; row < matrixSize; ++row) {
-      for (int col = 0; col < matrixSize; ++col) {
-        input.data[static_cast<std::size_t>(row) * static_cast<std::size_t>(matrixSize) +
-                   static_cast<std::size_t>(col)] = static_cast<double>(row + col);
+    for (int row = 0; row < matrix_size_; ++row) {
+      for (int col = 0; col < matrix_size_; ++col) {
+        input_.data[(static_cast<std::size_t>(row) * static_cast<std::size_t>(matrix_size_)) +
+                    static_cast<std::size_t>(col)] = static_cast<double>(row + col);
       }
     }
 
-    expected.col_sum.resize(static_cast<std::size_t>(matrixSize));
-    for (int col = 0; col < matrixSize; ++col) {
+    expected_.col_sum.resize(static_cast<std::size_t>(matrix_size_));
+    for (int col = 0; col < matrix_size_; ++col) {
       double sum = 0.0;
-      for (int row = 0; row < matrixSize; ++row) {
+      for (int row = 0; row < matrix_size_; ++row) {
         sum += static_cast<double>(row + col);
       }
-      expected.col_sum[static_cast<std::size_t>(col)] = sum;
+      expected_.col_sum[static_cast<std::size_t>(col)] = sum;
     }
   }
 
   InType GetTestInputData() override {
-    return input;
+    return input_;
   }
 
   bool CheckTestOutputData(OutType &output_data) override {
-    if (output_data.col_sum.size() != expected.col_sum.size()) {
+    if (output_data.col_sum.size() != expected_.col_sum.size()) {
       return false;
     }
-    for (std::size_t i = 0; i < expected.col_sum.size(); ++i) {
-      if (std::abs(output_data.col_sum[i] - expected.col_sum[i]) > 1e-9) {
+    for (std::size_t i = 0; i < expected_.col_sum.size(); ++i) {
+      if (std::abs(output_data.col_sum[i] - expected_.col_sum[i]) > 1e-9) {
         return false;
       }
     }
@@ -64,9 +63,9 @@ class KopilovDSumValColMatTests : public ppc::util::BaseRunFuncTests<InType, Out
   }
 
  private:
-  int matrixSize = 0;
-  InType input;
-  OutType expected;
+  int matrix_size_ = 0;
+  InType input_;
+  OutType expected_;
 };
 
 namespace {

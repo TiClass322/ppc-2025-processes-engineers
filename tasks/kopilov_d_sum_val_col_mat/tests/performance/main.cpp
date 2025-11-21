@@ -13,42 +13,42 @@ namespace kopilov_d_sum_val_col_mat {
 
 class KopilovDSumValColMatPerfTests : public ppc::util::BaseRunPerfTests<InType, OutType> {
  protected:
-  const int kMatrixSize = 4000;
-  InType inputData;
-  OutType expectedOutput;
+  const int k_matrix_size = 4000;
+  InType input_data;
+  OutType expected_output;
 
   void SetUp() override {
-    inputData.rows = kMatrixSize;
-    inputData.cols = kMatrixSize;
-    inputData.data.resize(static_cast<std::size_t>(kMatrixSize) * static_cast<std::size_t>(kMatrixSize));
+    input_data.rows = k_matrix_size;
+    input_data.cols = k_matrix_size;
+    input_data.data.resize(static_cast<std::size_t>(k_matrix_size) * static_cast<std::size_t>(k_matrix_size));
 
-    for (int row = 0; row < kMatrixSize; ++row) {
-      for (int col = 0; col < kMatrixSize; ++col) {
-        inputData.data[static_cast<std::size_t>(row) * static_cast<std::size_t>(kMatrixSize) +
-                       static_cast<std::size_t>(col)] = static_cast<double>(row + col);
+    for (int row = 0; row < k_matrix_size; ++row) {
+      for (int col = 0; col < k_matrix_size; ++col) {
+        input_data.data[(static_cast<std::size_t>(row) * static_cast<std::size_t>(k_matrix_size)) +
+                        static_cast<std::size_t>(col)] = static_cast<double>(row + col);
       }
     }
 
-    expectedOutput.col_sum.resize(static_cast<std::size_t>(kMatrixSize));
-    for (int col = 0; col < kMatrixSize; ++col) {
+    expected_output.col_sum.resize(static_cast<std::size_t>(k_matrix_size));
+    for (int col = 0; col < k_matrix_size; ++col) {
       double sum = 0.0;
-      for (int row = 0; row < kMatrixSize; ++row) {
+      for (int row = 0; row < k_matrix_size; ++row) {
         sum += static_cast<double>(row + col);
       }
-      expectedOutput.col_sum[static_cast<std::size_t>(col)] = sum;
+      expected_output.col_sum[static_cast<std::size_t>(col)] = sum;
     }
   }
 
   InType GetTestInputData() override {
-    return inputData;
+    return input_data;
   }
 
   bool CheckTestOutputData(OutType &output_data) override {
-    if (output_data.col_sum.size() != expectedOutput.col_sum.size()) {
+    if (output_data.col_sum.size() != expected_output.col_sum.size()) {
       return false;
     }
-    for (std::size_t i = 0; i < expectedOutput.col_sum.size(); ++i) {
-      if (std::abs(output_data.col_sum[i] - expectedOutput.col_sum[i]) > 1e-9) {
+    for (std::size_t i = 0; i < expected_output.col_sum.size(); ++i) {
+      if (std::abs(output_data.col_sum[i] - expected_output.col_sum[i]) > 1e-9) {
         return false;
       }
     }
