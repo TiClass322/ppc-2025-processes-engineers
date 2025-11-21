@@ -11,6 +11,7 @@
 #include "kopilov_d_sum_val_col_mat/mpi/include/ops_mpi.hpp"
 #include "kopilov_d_sum_val_col_mat/seq/include/ops_seq.hpp"
 #include "util/include/func_test_util.hpp"
+#include "util/include/util.hpp"
 
 namespace kopilov_d_sum_val_col_mat {
 
