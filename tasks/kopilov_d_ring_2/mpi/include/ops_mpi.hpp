@@ -11,7 +11,7 @@ class KopilovDRingMPI : public BaseTask {
     return ppc::task::TypeOfTask::kMPI;
   }
 
-  explicit KopilovDRingMPI(const InType& in);
+  explicit KopilovDRingMPI(const InType &in);
 
  private:
   bool ValidationImpl() override;

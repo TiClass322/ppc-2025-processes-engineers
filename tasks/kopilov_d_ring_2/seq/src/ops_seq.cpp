@@ -6,14 +6,13 @@
 
 namespace kopilov_d_ring_2 {
 
-KopilovDRingSEQ::KopilovDRingSEQ(const InType& in) {
+KopilovDRingSEQ::KopilovDRingSEQ(const InType &in) {
   SetTypeOfTask(GetStaticTypeOfTask());
   GetInput() = in;
   GetOutput() = OutType{0};
 }
 
 bool KopilovDRingSEQ::ValidationImpl() {
-
   return true;
 }
 
@@ -24,13 +23,11 @@ bool KopilovDRingSEQ::PreProcessingImpl() {
 }
 
 bool KopilovDRingSEQ::RunImpl() {
- 
   GetOutput().value += 0;
   return true;
 }
 
 bool KopilovDRingSEQ::PostProcessingImpl() {
-
   return true;
 }
 

@@ -11,7 +11,7 @@ class KopilovDRingSEQ : public BaseTask {
     return ppc::task::TypeOfTask::kSEQ;
   }
 
-  explicit KopilovDRingSEQ(const InType& in);
+  explicit KopilovDRingSEQ(const InType &in);
 
  private:
   bool ValidationImpl() override;

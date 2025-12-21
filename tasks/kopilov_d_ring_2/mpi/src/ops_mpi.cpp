@@ -1,15 +1,15 @@
 #include "kopilov_d_ring_2/mpi/include/ops_mpi.hpp"
 
+#include <mpi.h>
+
 #include <stdexcept>
 #include <vector>
-
-#include <mpi.h>
 
 #include "kopilov_d_ring_2/common/include/common.hpp"
 
 namespace kopilov_d_ring_2 {
 
-KopilovDRingMPI::KopilovDRingMPI(const InType& in) {
+KopilovDRingMPI::KopilovDRingMPI(const InType &in) {
   SetTypeOfTask(GetStaticTypeOfTask());
   GetInput() = in;
   GetOutput() = OutType{0};
@@ -48,7 +48,6 @@ bool KopilovDRingMPI::RunImpl() {
     current_value += rank;
     MPI_Send(&current_value, 1, MPI_INT, next_rank, 0, MPI_COMM_WORLD);
   }
-
 
   MPI_Bcast(&current_value, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
