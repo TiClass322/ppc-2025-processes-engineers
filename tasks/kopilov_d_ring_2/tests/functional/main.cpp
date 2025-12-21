@@ -31,7 +31,8 @@ class KopilovDRunFuncTestsProcesses : public ppc::util::BaseRunFuncTests<InType,
   void SetUp() override {
     int world_size = 1;
     const auto &test_param = GetParam();
-    const std::string &test_name = std::get<static_cast<std::size_t>(ppc::util::GTestParamIndex::kNameTest)>(test_param);
+    const std::string &test_name =
+        std::get<static_cast<std::size_t>(ppc::util::GTestParamIndex::kNameTest)>(test_param);
     const bool is_sequential = test_name.find("_seq") != std::string::npos;
 
     if (!is_sequential) {
