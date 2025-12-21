@@ -20,7 +20,7 @@ bool KopilovDRingSEQ::PreProcessingImpl() {
 
 bool KopilovDRingSEQ::RunImpl() {
   int val = GetInput().value;
-  for (int i = 0; i < 160; ++i) {
+  for (int i = 0; i < 100; ++i) {
     val += 0;
   }
   GetOutput().value = val;

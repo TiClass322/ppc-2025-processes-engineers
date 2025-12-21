@@ -36,7 +36,7 @@ bool KopilovDRingMPI::RunImpl() {
   const int next_rank = (rank + 1) % size;
   const int prev_rank = (rank == 0) ? size - 1 : rank - 1;
 
-  for (int i = 0; i < 160; ++i) {
+  for (int i = 0; i < 100; ++i) {
     if (rank == 0) {
       current_value += rank;
       MPI_Send(&current_value, 1, MPI_INT, next_rank, 0, MPI_COMM_WORLD);
