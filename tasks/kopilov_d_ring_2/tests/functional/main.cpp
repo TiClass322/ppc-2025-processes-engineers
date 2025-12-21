@@ -24,9 +24,6 @@ class KopilovDRunFuncTestsProcesses : public ppc::util::BaseRunFuncTests<InType,
 
  protected:
   void SetUp() override {
-    int world_size = 0;
-    MPI_Comm_size(MPI_COMM_WORLD, &world_size);
-
     TestType params = std::get<static_cast<std::size_t>(ppc::util::GTestParamIndex::kTestParams)>(GetParam());
     std::string test_name_str = std::get<static_cast<std::size_t>(ppc::util::GTestParamIndex::kNameTest)>(GetParam());
 
@@ -34,6 +31,8 @@ class KopilovDRunFuncTestsProcesses : public ppc::util::BaseRunFuncTests<InType,
     expected_output_.data = std::get<0>(params);
 
     if (test_name_str.find("_mpi") != std::string::npos) {
+      int world_size = 0;
+      MPI_Comm_size(MPI_COMM_WORLD, &world_size);
       int sum_of_ranks = (world_size * (world_size - 1)) / 2;
       for (int &val : expected_output_.data) {
         val += sum_of_ranks;
