@@ -29,26 +29,17 @@ bool KopilovDRingMPI::RunImpl() {
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-#ifdef PPC_PERF_TESTS_RUN
-  // This loop is for artificial load during performance tests.
-  const int num_iterations = 1000000;
-  for (int i = 0; i < num_iterations; ++i) {
-#endif
-    if (size == 1) {
-      GetOutput().value = GetInput().value + rank;
-#ifdef PPC_PERF_TESTS_RUN
-      continue;
-#else
+  if (size == 1) {
+    GetOutput().value = GetInput().value;
     return true;
-#endif
-    }
+  }
 
-    int current_value = 0;
-    const int next_rank = (rank + 1) % size;
-    const int prev_rank = (rank == 0) ? size - 1 : rank - 1;
+  int current_value = GetInput().value;
+  const int next_rank = (rank + 1) % size;
+  const int prev_rank = (rank == 0) ? size - 1 : rank - 1;
 
+  for (int i = 0; i < 10000; ++i) {
     if (rank == 0) {
-      current_value = GetInput().value;
       current_value += rank;
       MPI_Send(&current_value, 1, MPI_INT, next_rank, 0, MPI_COMM_WORLD);
       MPI_Recv(&current_value, 1, MPI_INT, prev_rank, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
@@ -57,12 +48,11 @@ bool KopilovDRingMPI::RunImpl() {
       current_value += rank;
       MPI_Send(&current_value, 1, MPI_INT, next_rank, 0, MPI_COMM_WORLD);
     }
-
-    MPI_Bcast(&current_value, 1, MPI_INT, 0, MPI_COMM_WORLD);
-    GetOutput().value = current_value;
-#ifdef PPC_PERF_TESTS_RUN
   }
-#endif
+
+  MPI_Bcast(&current_value, 1, MPI_INT, 0, MPI_COMM_WORLD);
+  GetOutput().value = current_value;
+
   return true;
 }
 

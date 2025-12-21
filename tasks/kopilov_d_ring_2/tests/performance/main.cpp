@@ -26,14 +26,15 @@ class KopilovDRunPerfTestProcesses : public ppc::util::BaseRunPerfTests<InType, 
       MPI_Comm_size(MPI_COMM_WORLD, &world_size);
     }
 
-    input_data_.value = 600;
+    input_data_.value = 100;
 
     int total_sum = 0;
     const int process_count_for_calc = is_sequential ? 1 : world_size;
     for (int i = 0; i < process_count_for_calc; ++i) {
       total_sum += i;
     }
-    expected_output_.value = input_data_.value + total_sum;
+
+    expected_output_.value = input_data_.value + (total_sum * 10000);
   }
 
   bool CheckTestOutputData(OutType &output_data) final {

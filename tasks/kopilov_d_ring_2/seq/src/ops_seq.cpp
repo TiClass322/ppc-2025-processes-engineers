@@ -22,14 +22,11 @@ bool KopilovDRingSEQ::PreProcessingImpl() {
 }
 
 bool KopilovDRingSEQ::RunImpl() {
-#ifdef PPC_PERF_TESTS_RUN
-  // Artificial load to make the test run longer
-  for (int i = 0; i < 2000000; ++i) {
-    GetOutput().value += 0;
+  int val = GetInput().value;
+  for (int i = 0; i < 10000; ++i) {
+    val += 0;
   }
-#else
-  GetOutput().value += 0;
-#endif
+  GetOutput().value = val;
   return true;
 }
 

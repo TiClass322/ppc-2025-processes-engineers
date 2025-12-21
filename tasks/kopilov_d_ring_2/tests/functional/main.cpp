@@ -39,8 +39,8 @@ class KopilovDRunFuncTestsProcesses : public ppc::util::BaseRunFuncTests<InType,
       MPI_Comm_size(MPI_COMM_WORLD, &world_size);
     }
 
-    const auto &params = std::get<static_cast<size_t>(ppc::util::GTestParamIndex::kTestParams)>(test_param);
-    const auto initial_value = std::get<0>(params);
+    TestType params = std::get<static_cast<std::size_t>(ppc::util::GTestParamIndex::kTestParams)>(test_param);
+    auto initial_value = std::get<0>(params);
 
     input_data_.value = initial_value;
 
@@ -49,7 +49,8 @@ class KopilovDRunFuncTestsProcesses : public ppc::util::BaseRunFuncTests<InType,
     for (int i = 0; i < process_count_for_calc; ++i) {
       total_sum += i;
     }
-    expected_output_.value = input_data_.value + total_sum;
+
+    expected_output_.value = input_data_.value + (total_sum * 10000);
   }
 
   bool CheckTestOutputData(OutType &output_data) final {
