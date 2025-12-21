@@ -50,7 +50,7 @@ class KopilovDRunFuncTestsProcesses : public ppc::util::BaseRunFuncTests<InType,
       total_sum += i;
     }
 
-    expected_output_.value = input_data_.value + (total_sum * 10000);
+    expected_output_.value = input_data_.value + (total_sum * 500);
   }
 
   bool CheckTestOutputData(OutType &output_data) final {

@@ -2,7 +2,6 @@
 
 #include <mpi.h>
 
-#include <stdexcept>
 #include <vector>
 
 #include "kopilov_d_ring_2/common/include/common.hpp"
@@ -18,7 +17,6 @@ KopilovDRingMPI::KopilovDRingMPI(const InType &in) {
 bool KopilovDRingMPI::ValidationImpl() {
   return true;
 }
-
 bool KopilovDRingMPI::PreProcessingImpl() {
   return true;
 }
@@ -29,16 +27,16 @@ bool KopilovDRingMPI::RunImpl() {
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   MPI_Comm_size(MPI_COMM_WORLD, &size);
 
+  int current_value = GetInput().value;
   if (size == 1) {
-    GetOutput().value = GetInput().value;
+    GetOutput().value = current_value + rank;
     return true;
   }
 
-  int current_value = GetInput().value;
   const int next_rank = (rank + 1) % size;
   const int prev_rank = (rank == 0) ? size - 1 : rank - 1;
 
-  for (int i = 0; i < 10000; ++i) {
+  for (int i = 0; i < 500; ++i) {
     if (rank == 0) {
       current_value += rank;
       MPI_Send(&current_value, 1, MPI_INT, next_rank, 0, MPI_COMM_WORLD);
@@ -52,12 +50,10 @@ bool KopilovDRingMPI::RunImpl() {
 
   MPI_Bcast(&current_value, 1, MPI_INT, 0, MPI_COMM_WORLD);
   GetOutput().value = current_value;
-
   return true;
 }
 
 bool KopilovDRingMPI::PostProcessingImpl() {
   return true;
 }
-
 }  // namespace kopilov_d_ring_2
