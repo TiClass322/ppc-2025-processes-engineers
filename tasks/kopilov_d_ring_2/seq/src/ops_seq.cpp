@@ -17,13 +17,15 @@ bool KopilovDRingSEQ::ValidationImpl() {
 }
 
 bool KopilovDRingSEQ::PreProcessingImpl() {
-  // Initialize output with input value
   GetOutput().value = GetInput().value;
   return true;
 }
 
 bool KopilovDRingSEQ::RunImpl() {
-  GetOutput().value += 0;
+  for (int i = 0; i < 20000; ++i) {
+    GetOutput().value += 0;
+  }
+  
   return true;
 }
 
