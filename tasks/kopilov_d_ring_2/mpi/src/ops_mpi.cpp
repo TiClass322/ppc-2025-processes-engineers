@@ -33,7 +33,7 @@ bool KopilovDRingMPI::RunImpl() {
   for (int i = 0; i < num_iterations; ++i) {
     if (size == 1) {
       GetOutput().value = GetInput().value + rank;
-      continue;  
+      continue;
     }
 
     int current_value = 0;

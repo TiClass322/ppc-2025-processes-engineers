@@ -25,7 +25,7 @@ bool KopilovDRingSEQ::RunImpl() {
   for (int i = 0; i < 20000; ++i) {
     GetOutput().value += 0;
   }
-  
+
   return true;
 }
 
