@@ -30,7 +30,8 @@ bool KopilovDRingMPI::RunImpl() {
   MPI_Comm_size(MPI_COMM_WORLD, &size);
 
 #ifdef PPC_PERF_TESTS_RUN
-  const int num_iterations = 10000;
+  // This loop is for artificial load during performance tests.
+  const int num_iterations = 1000000;
   for (int i = 0; i < num_iterations; ++i) {
 #endif
     if (size == 1) {
