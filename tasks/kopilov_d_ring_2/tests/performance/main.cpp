@@ -1,9 +1,6 @@
 #include <gtest/gtest.h>
 #include <mpi.h>
 
-#include <numeric>
-#include <string>
-#include <tuple>
 #include <vector>
 
 #include "kopilov_d_ring_2/common/include/common.hpp"
@@ -14,40 +11,38 @@
 namespace kopilov_d_ring_2 {
 
 class KopilovDRunPerfTestProcesses : public ppc::util::BaseRunPerfTests<InType, OutType> {
- protected:
+  InType input_data_;
+  OutType expected_output_;
+
   void SetUp() override {
-    int world_size = 1;
-    const auto &test_param = GetParam();
-    const std::string &test_name =
-        std::get<static_cast<std::size_t>(ppc::util::GTestParamIndex::kNameTest)>(test_param);
-    const bool is_sequential = test_name.find("_seq") != std::string::npos;
+    int world_size = 0;
+    MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+    auto test_name = std::get<1>(GetParam());
 
-    if (!is_sequential) {
-      MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+    // Create data
+    const int vector_size = 10000000;
+    input_data_.data.resize(vector_size);
+    for (int i = 0; i < vector_size; ++i) {
+      input_data_.data[i] = i;
     }
 
-    input_data_.value = 100;
-
-    int total_sum = 0;
-    const int process_count_for_calc = is_sequential ? 1 : world_size;
-    for (int i = 0; i < process_count_for_calc; ++i) {
-      total_sum += i;
+    // Create expected output
+    expected_output_.data = input_data_.data;
+    if (test_name.find("_mpi") != std::string::npos) {
+      int sum_of_ranks = (world_size * (world_size - 1)) / 2;
+      for (int &val : expected_output_.data) {
+        val += sum_of_ranks;
+      }
     }
-
-    expected_output_.value = input_data_.value + (total_sum * 100);
   }
 
   bool CheckTestOutputData(OutType &output_data) final {
-    return output_data.value == expected_output_.value;
+    return output_data.data == expected_output_.data;
   }
 
   InType GetTestInputData() final {
     return input_data_;
   }
-
- private:
-  InType input_data_{};
-  OutType expected_output_{};
 };
 
 TEST_P(KopilovDRunPerfTestProcesses, RunPerfModes) {
@@ -61,6 +56,6 @@ const auto kGtestValues = ppc::util::TupleToGTestValues(kAllPerfTasks);
 
 const auto kPerfTestName = KopilovDRunPerfTestProcesses::CustomPerfTestName;
 
-INSTANTIATE_TEST_SUITE_P(RunModeTests, KopilovDRunPerfTestProcesses, kGtestValues, kPerfTestName);
+INSTANTIATE_TEST_SUITE_P(RunModePerfTests, KopilovDRunPerfTestProcesses, kGtestValues, kPerfTestName);
 
 }  // namespace kopilov_d_ring_2

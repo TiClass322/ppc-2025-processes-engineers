@@ -9,17 +9,17 @@
 namespace kopilov_d_ring_2 {
 
 struct Input {
-  int value;
+  std::vector<int> data;
 };
 
 struct Output {
-  int value;
+  std::vector<int> data;
 };
 
 using InType = Input;
 using OutType = Output;
 
-using TestType = std::tuple<int>;
+using TestType = std::tuple<std::vector<int>>;
 using BaseTask = ppc::task::Task<InType, OutType>;
 
 }  // namespace kopilov_d_ring_2

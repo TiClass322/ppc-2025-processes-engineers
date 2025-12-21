@@ -2,6 +2,7 @@
 
 #include <mpi.h>
 
+#include <cassert>
 #include <vector>
 
 #include "kopilov_d_ring_2/common/include/common.hpp"
@@ -11,49 +12,76 @@ namespace kopilov_d_ring_2 {
 KopilovDRingMPI::KopilovDRingMPI(const InType &in) {
   SetTypeOfTask(GetStaticTypeOfTask());
   GetInput() = in;
-  GetOutput() = OutType{0};
 }
 
 bool KopilovDRingMPI::ValidationImpl() {
   return true;
 }
+
 bool KopilovDRingMPI::PreProcessingImpl() {
+  GetOutput().data.clear();
   return true;
 }
 
 bool KopilovDRingMPI::RunImpl() {
   int rank = 0;
-  int size = 1;
+  int world_size = 0;
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-  MPI_Comm_size(MPI_COMM_WORLD, &size);
+  MPI_Comm_size(MPI_COMM_WORLD, &world_size);
 
-  int current_value = GetInput().value;
-  if (size == 1) {
-    GetOutput().value = current_value + rank;
-    return true;
+  std::vector<int> current_data;
+  if (rank == 0) {
+    current_data = GetInput().data;
   }
 
-  const int next_rank = (rank + 1) % size;
-  const int prev_rank = (rank == 0) ? size - 1 : rank - 1;
+  if (world_size > 1) {
+    int next_proc = (rank + 1) % world_size;
+    int prev_proc = (rank - 1 + world_size) % world_size;
 
-  for (int i = 0; i < 100; ++i) {
     if (rank == 0) {
-      current_value += rank;
-      MPI_Send(&current_value, 1, MPI_INT, next_rank, 0, MPI_COMM_WORLD);
-      MPI_Recv(&current_value, 1, MPI_INT, prev_rank, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+      for (int &val : current_data) {
+        val += rank;
+      }
+      int size = current_data.size();
+      MPI_Send(&size, 1, MPI_INT, next_proc, 0, MPI_COMM_WORLD);
+      MPI_Send(current_data.data(), size, MPI_INT, next_proc, 1, MPI_COMM_WORLD);
+      MPI_Recv(&size, 1, MPI_INT, prev_proc, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+      current_data.resize(size);
+      MPI_Recv(current_data.data(), size, MPI_INT, prev_proc, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
     } else {
-      MPI_Recv(&current_value, 1, MPI_INT, prev_rank, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-      current_value += rank;
-      MPI_Send(&current_value, 1, MPI_INT, next_rank, 0, MPI_COMM_WORLD);
+      int size = 0;
+      MPI_Recv(&size, 1, MPI_INT, prev_proc, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+      current_data.resize(size);
+      MPI_Recv(current_data.data(), size, MPI_INT, prev_proc, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+
+      for (int &val : current_data) {
+        val += rank;
+      }
+
+      MPI_Send(&size, 1, MPI_INT, next_proc, 0, MPI_COMM_WORLD);
+      MPI_Send(current_data.data(), size, MPI_INT, next_proc, 1, MPI_COMM_WORLD);
+    }
+  } else {
+    for (int &val : current_data) {
+      val += rank;
     }
   }
 
-  MPI_Bcast(&current_value, 1, MPI_INT, 0, MPI_COMM_WORLD);
-  GetOutput().value = current_value;
+  int final_size = (rank == 0) ? current_data.size() : 0;
+  MPI_Bcast(&final_size, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+  if (rank != 0) {
+    current_data.resize(final_size);
+  }
+
+  MPI_Bcast(current_data.data(), final_size, MPI_INT, 0, MPI_COMM_WORLD);
+  GetOutput().data = current_data;
+
   return true;
 }
 
 bool KopilovDRingMPI::PostProcessingImpl() {
   return true;
 }
+
 }  // namespace kopilov_d_ring_2

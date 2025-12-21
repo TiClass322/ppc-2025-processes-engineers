@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "kopilov_d_ring_2/common/include/common.hpp"
 #include "task/include/task.hpp"
 
