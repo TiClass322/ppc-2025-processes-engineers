@@ -5,6 +5,7 @@
 #include <cstddef>
 #include <string>
 #include <tuple>
+#include <utility>
 #include <vector>
 
 #include "kopilov_d_ring_2/common/include/common.hpp"
@@ -18,7 +19,7 @@ namespace kopilov_d_ring_2 {
 class KopilovDRunFuncTestsProcesses : public ppc::util::BaseRunFuncTests<InType, OutType, TestType> {
  public:
   static std::string PrintTestParam(const TestType &test_param) {
-    static int index = 0;
+    static int index = 0;  // StaticVariableCase: lower_case
     return "VectorSize_" + std::to_string(std::get<0>(test_param).size()) + "_" + std::to_string(index++);
   }
 
@@ -49,8 +50,8 @@ class KopilovDRunFuncTestsProcesses : public ppc::util::BaseRunFuncTests<InType,
   }
 
  private:
-  InType input_data_;
-  OutType expected_output_;
+  InType input_data_;        // PrivateMemberSuffix: _
+  OutType expected_output_;  // PrivateMemberSuffix: _
 };
 
 namespace {
@@ -59,6 +60,7 @@ TEST_P(KopilovDRunFuncTestsProcesses, RingSumVector) {
   ExecuteTest(GetParam());
 }
 
+// GlobalConstantPrefix: k, Case: CamelCase
 const std::array<TestType, 4> kTestParam = {
     std::make_tuple(std::vector<int>{10, 20, 30}),
     std::make_tuple(std::vector<int>{40, 50}),
@@ -67,9 +69,7 @@ const std::array<TestType, 4> kTestParam = {
 };
 
 const auto kTestTasksList =
-
     std::tuple_cat(ppc::util::AddFuncTask<KopilovDRingMPI, InType>(kTestParam, PPC_SETTINGS_kopilov_d_ring_2),
-
                    ppc::util::AddFuncTask<KopilovDRingSEQ, InType>(kTestParam, PPC_SETTINGS_kopilov_d_ring_2));
 
 const auto kGtestValues = ppc::util::ExpandToValues(kTestTasksList);

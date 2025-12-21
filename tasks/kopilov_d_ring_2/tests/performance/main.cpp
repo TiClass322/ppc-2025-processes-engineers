@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <mpi.h>
 
+#include <string>
 #include <vector>
 
 #include "kopilov_d_ring_2/common/include/common.hpp"
@@ -11,19 +12,17 @@
 namespace kopilov_d_ring_2 {
 
 class KopilovDRunPerfTestProcesses : public ppc::util::BaseRunPerfTests<InType, OutType> {
-  InType input_data_;
-  OutType expected_output_;
-
+ protected:
   void SetUp() override {
     int world_size = 0;
     MPI_Comm_size(MPI_COMM_WORLD, &world_size);
     auto test_name = std::get<1>(GetParam());
 
     // Create data
-    const int vector_size = 10000000;
+    const std::size_t vector_size = 10000000;
     input_data_.data.resize(vector_size);
-    for (int i = 0; i < vector_size; ++i) {
-      input_data_.data[i] = i;
+    for (std::size_t i = 0; i < vector_size; ++i) {
+      input_data_.data[i] = static_cast<int>(i);
     }
 
     // Create expected output
@@ -43,6 +42,10 @@ class KopilovDRunPerfTestProcesses : public ppc::util::BaseRunPerfTests<InType, 
   InType GetTestInputData() final {
     return input_data_;
   }
+
+ private:
+  InType input_data_;        // PrivateMemberSuffix: _
+  OutType expected_output_;  // PrivateMemberSuffix: _
 };
 
 TEST_P(KopilovDRunPerfTestProcesses, RunPerfModes) {

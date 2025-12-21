@@ -2,7 +2,7 @@
 
 #include <mpi.h>
 
-#include <cassert>
+#include <utility>
 #include <vector>
 
 #include "kopilov_d_ring_2/common/include/common.hpp"
@@ -35,14 +35,14 @@ bool KopilovDRingMPI::RunImpl() {
   }
 
   if (world_size > 1) {
-    int next_proc = (rank + 1) % world_size;
-    int prev_proc = (rank - 1 + world_size) % world_size;
+    const int next_proc = (rank + 1) % world_size;
+    const int prev_proc = (rank - 1 + world_size) % world_size;
 
     if (rank == 0) {
       for (int &val : current_data) {
         val += rank;
       }
-      int size = current_data.size();
+      auto size = static_cast<int>(current_data.size());
       MPI_Send(&size, 1, MPI_INT, next_proc, 0, MPI_COMM_WORLD);
       MPI_Send(current_data.data(), size, MPI_INT, next_proc, 1, MPI_COMM_WORLD);
       MPI_Recv(&size, 1, MPI_INT, prev_proc, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
@@ -67,7 +67,7 @@ bool KopilovDRingMPI::RunImpl() {
     }
   }
 
-  int final_size = (rank == 0) ? current_data.size() : 0;
+  int final_size = (rank == 0) ? static_cast<int>(current_data.size()) : 0;
   MPI_Bcast(&final_size, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
   if (rank != 0) {
@@ -75,7 +75,7 @@ bool KopilovDRingMPI::RunImpl() {
   }
 
   MPI_Bcast(current_data.data(), final_size, MPI_INT, 0, MPI_COMM_WORLD);
-  GetOutput().data = current_data;
+  GetOutput().data = std::move(current_data);
 
   return true;
 }
