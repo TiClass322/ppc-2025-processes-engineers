@@ -17,4 +17,3 @@ CMakeSettings.json
 .cache
 install
 *.pyc
-/tasks/kopilov_d_sum_val_col_mat
