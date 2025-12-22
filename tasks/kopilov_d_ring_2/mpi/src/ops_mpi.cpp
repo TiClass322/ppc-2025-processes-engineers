@@ -2,7 +2,6 @@
 
 #include <mpi.h>
 
-#include <algorithm>
 #include <utility>
 #include <vector>
 
@@ -34,8 +33,11 @@ bool KopilovDRingMPI::RunImpl() {
   if (rank == 0) {
     current_data = GetInput().data;
   }
+
   auto apply_offset = [rank](std::vector<int> &data) {
-    std::for_each(data.begin(), data.end(), [rank](int &val) { val += rank; });
+    for (int &val : data) {
+      val += rank;
+    }
   };
 
   if (world_size > 1) {
