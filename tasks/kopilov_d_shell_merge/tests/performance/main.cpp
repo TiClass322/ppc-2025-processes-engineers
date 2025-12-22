@@ -55,8 +55,8 @@ class KopilovDShellMergeRunPerfTestProcesses : public ppc::util::BaseRunPerfTest
   }
 
  private:
-  InType input_data_;  // PrivateMemberSuffix: _
-  OutType expected_;   // PrivateMemberSuffix: _
+  InType input_data_;
+  OutType expected_;
 };
 
 TEST_P(KopilovDShellMergeRunPerfTestProcesses, RunPerfModes) {

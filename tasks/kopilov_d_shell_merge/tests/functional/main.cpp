@@ -39,8 +39,8 @@ class KopilovDShellMergeRunFuncTestsProcesses : public ppc::util::BaseRunFuncTes
   }
 
  private:
-  InType input_data_;  // PrivateMemberSuffix: _
-  OutType expected_;   // PrivateMemberSuffix: _
+  InType input_data_;
+  OutType expected_;
 };
 
 namespace {
