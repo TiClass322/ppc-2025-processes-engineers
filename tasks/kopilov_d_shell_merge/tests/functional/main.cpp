@@ -7,15 +7,15 @@
 #include <tuple>
 #include <vector>
 
-#include "kopilov_d_shell_batcher/common/include/common.hpp"
-#include "kopilov_d_shell_batcher/mpi/include/ops_mpi.hpp"
-#include "kopilov_d_shell_batcher/seq/include/ops_seq.hpp"
+#include "kopilov_d_shell_merge/common/include/common.hpp"
+#include "kopilov_d_shell_merge/mpi/include/ops_mpi.hpp"
+#include "kopilov_d_shell_merge/seq/include/ops_seq.hpp"
 #include "util/include/func_test_util.hpp"
 #include "util/include/util.hpp"
 
-namespace kopilov_d_shell_batcher {
+namespace kopilov_d_shell_merge {
 
-class KopilovDShellBatcherRunFuncTestsProcesses : public ppc::util::BaseRunFuncTests<InType, OutType, TestType> {
+class KopilovDShellMergeRunFuncTestsProcesses : public ppc::util::BaseRunFuncTests<InType, OutType, TestType> {
  public:
   static std::string PrintTestParam(const TestType &test_param) {
     return std::get<1>(test_param);
@@ -45,7 +45,7 @@ class KopilovDShellBatcherRunFuncTestsProcesses : public ppc::util::BaseRunFuncT
 
 namespace {
 
-TEST_P(KopilovDShellBatcherRunFuncTestsProcesses, ShellBatcherBasicCases) {
+TEST_P(KopilovDShellMergeRunFuncTestsProcesses, ShellMergeBasicCases) {
   ExecuteTest(GetParam());
 }
 
@@ -60,17 +60,17 @@ const std::array<TestType, 7> kTestParam = {
 };
 
 const auto kTestTasksList = std::tuple_cat(
-    ppc::util::AddFuncTask<KopilovDShellBatcherMPI, InType>(kTestParam, PPC_SETTINGS_kopilov_d_shell_batcher),
-    ppc::util::AddFuncTask<KopilovDShellBatcherSEQ, InType>(kTestParam, PPC_SETTINGS_kopilov_d_shell_batcher));
+    ppc::util::AddFuncTask<KopilovDShellMergeMPI, InType>(kTestParam, PPC_SETTINGS_kopilov_d_shell_merge),
+    ppc::util::AddFuncTask<KopilovDShellMergeSEQ, InType>(kTestParam, PPC_SETTINGS_kopilov_d_shell_merge));
 
 const auto kGtestValues = ppc::util::ExpandToValues(kTestTasksList);
 
 const auto kFuncTestName =
-    KopilovDShellBatcherRunFuncTestsProcesses::PrintFuncTestName<KopilovDShellBatcherRunFuncTestsProcesses>;
+    KopilovDShellMergeRunFuncTestsProcesses::PrintFuncTestName<KopilovDShellMergeRunFuncTestsProcesses>;
 
-INSTANTIATE_TEST_SUITE_P(KopilovDShellBatcherFuncTests, KopilovDShellBatcherRunFuncTestsProcesses, kGtestValues,
+INSTANTIATE_TEST_SUITE_P(KopilovDShellMergeFuncTests, KopilovDShellMergeRunFuncTestsProcesses, kGtestValues,
                          kFuncTestName);
 
 }  // namespace
 
-}  // namespace kopilov_d_shell_batcher
+}  // namespace kopilov_d_shell_merge

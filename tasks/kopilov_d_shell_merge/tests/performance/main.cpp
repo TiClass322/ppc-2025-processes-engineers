@@ -4,12 +4,12 @@
 #include <utility>
 #include <vector>
 
-#include "kopilov_d_shell_batcher/common/include/common.hpp"
-#include "kopilov_d_shell_batcher/mpi/include/ops_mpi.hpp"
-#include "kopilov_d_shell_batcher/seq/include/ops_seq.hpp"
+#include "kopilov_d_shell_merge/common/include/common.hpp"
+#include "kopilov_d_shell_merge/mpi/include/ops_mpi.hpp"
+#include "kopilov_d_shell_merge/seq/include/ops_seq.hpp"
 #include "util/include/perf_test_util.hpp"
 
-namespace kopilov_d_shell_batcher {
+namespace kopilov_d_shell_merge {
 
 namespace {
 
@@ -30,7 +30,7 @@ void ShellSort(InType &vec) {
 
 }  // namespace
 
-class KopilovDShellBatcherRunPerfTestProcesses : public ppc::util::BaseRunPerfTests<InType, OutType> {
+class KopilovDShellMergeRunPerfTestProcesses : public ppc::util::BaseRunPerfTests<InType, OutType> {
  public:
   void SetUp() override {
     constexpr std::size_t kSize = 200000;
@@ -59,16 +59,16 @@ class KopilovDShellBatcherRunPerfTestProcesses : public ppc::util::BaseRunPerfTe
   OutType expected_;   // PrivateMemberSuffix: _
 };
 
-TEST_P(KopilovDShellBatcherRunPerfTestProcesses, RunPerfModes) {
+TEST_P(KopilovDShellMergeRunPerfTestProcesses, RunPerfModes) {
   ExecuteTest(GetParam());
 }
 
-const auto kAllPerfTasks = ppc::util::MakeAllPerfTasks<InType, KopilovDShellBatcherMPI, KopilovDShellBatcherSEQ>(
-    PPC_SETTINGS_kopilov_d_shell_batcher);
+const auto kAllPerfTasks = ppc::util::MakeAllPerfTasks<InType, KopilovDShellMergeMPI, KopilovDShellMergeSEQ>(
+    PPC_SETTINGS_kopilov_d_shell_merge);
 
 const auto kGtestValues = ppc::util::TupleToGTestValues(kAllPerfTasks);
-const auto kPerfTestName = KopilovDShellBatcherRunPerfTestProcesses::CustomPerfTestName;
+const auto kPerfTestName = KopilovDShellMergeRunPerfTestProcesses::CustomPerfTestName;
 
-INSTANTIATE_TEST_SUITE_P(RunModeTests, KopilovDShellBatcherRunPerfTestProcesses, kGtestValues, kPerfTestName);
+INSTANTIATE_TEST_SUITE_P(RunModeTests, KopilovDShellMergeRunPerfTestProcesses, kGtestValues, kPerfTestName);
 
-}  // namespace kopilov_d_shell_batcher
+}  // namespace kopilov_d_shell_merge

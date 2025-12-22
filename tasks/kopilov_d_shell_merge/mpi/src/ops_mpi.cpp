@@ -1,4 +1,4 @@
-#include "kopilov_d_shell_batcher/mpi/include/ops_mpi.hpp"
+#include "kopilov_d_shell_merge/mpi/include/ops_mpi.hpp"
 
 #include <mpi.h>
 
@@ -8,7 +8,7 @@
 #include <utility>
 #include <vector>
 
-namespace kopilov_d_shell_batcher {
+namespace kopilov_d_shell_merge {
 
 namespace {
 
@@ -54,13 +54,13 @@ std::vector<int> RecvVector(int source, int tag, MPI_Comm comm) {
 
 }  // namespace
 
-bool KopilovDShellBatcherMPI::ValidationImpl() {
+bool KopilovDShellMergeMPI::ValidationImpl() {
   MPI_Comm_rank(MPI_COMM_WORLD, &world_rank_);
   MPI_Comm_size(MPI_COMM_WORLD, &world_size_);
   return true;
 }
 
-bool KopilovDShellBatcherMPI::PreProcessingImpl() {
+bool KopilovDShellMergeMPI::PreProcessingImpl() {
   MPI_Comm_rank(MPI_COMM_WORLD, &world_rank_);
   MPI_Comm_size(MPI_COMM_WORLD, &world_size_);
 
@@ -92,12 +92,12 @@ bool KopilovDShellBatcherMPI::PreProcessingImpl() {
   return true;
 }
 
-bool KopilovDShellBatcherMPI::RunImpl() {
+bool KopilovDShellMergeMPI::RunImpl() {
   ShellSort(local_);
   return true;
 }
 
-bool KopilovDShellBatcherMPI::PostProcessingImpl() {
+bool KopilovDShellMergeMPI::PostProcessingImpl() {
   if (world_rank_ == 0) {
     for (int i = 1; i < world_size_; ++i) {
       std::vector<int> other = RecvVector(i, 0, MPI_COMM_WORLD);
@@ -117,4 +117,4 @@ bool KopilovDShellBatcherMPI::PostProcessingImpl() {
   return true;
 }
 
-}  // namespace kopilov_d_shell_batcher
+}  // namespace kopilov_d_shell_merge

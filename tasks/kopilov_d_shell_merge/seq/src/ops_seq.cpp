@@ -1,4 +1,4 @@
-#include "kopilov_d_shell_batcher/seq/include/ops_seq.hpp"
+#include "kopilov_d_shell_merge/seq/include/ops_seq.hpp"
 
 #include <algorithm>
 #include <cstddef>
@@ -6,9 +6,9 @@
 #include <utility>
 #include <vector>
 
-#include "kopilov_d_shell_batcher/common/include/common.hpp"
+#include "kopilov_d_shell_merge/common/include/common.hpp"
 
-namespace kopilov_d_shell_batcher {
+namespace kopilov_d_shell_merge {
 
 namespace {
 
@@ -39,22 +39,22 @@ std::vector<int> SimpleMerge(const std::vector<int> &a, const std::vector<int> &
 
 }  // namespace
 
-KopilovDShellBatcherSEQ::KopilovDShellBatcherSEQ(const InType &in) {
+KopilovDShellMergeSEQ::KopilovDShellMergeSEQ(const InType &in) {
   SetTypeOfTask(GetStaticTypeOfTask());
   GetInput() = in;
 }
 
-bool KopilovDShellBatcherSEQ::ValidationImpl() {
+bool KopilovDShellMergeSEQ::ValidationImpl() {
   return true;
 }
 
-bool KopilovDShellBatcherSEQ::PreProcessingImpl() {
+bool KopilovDShellMergeSEQ::PreProcessingImpl() {
   data_ = GetInput();
   GetOutput().clear();
   return true;
 }
 
-bool KopilovDShellBatcherSEQ::RunImpl() {
+bool KopilovDShellMergeSEQ::RunImpl() {
   if (data_.size() < 2) {
     return true;
   }
@@ -70,9 +70,9 @@ bool KopilovDShellBatcherSEQ::RunImpl() {
   return true;
 }
 
-bool KopilovDShellBatcherSEQ::PostProcessingImpl() {
+bool KopilovDShellMergeSEQ::PostProcessingImpl() {
   GetOutput() = std::move(data_);
   return true;
 }
 
-}  // namespace kopilov_d_shell_batcher
+}  // namespace kopilov_d_shell_merge

@@ -2,18 +2,18 @@
 
 #include <vector>
 
-#include "kopilov_d_shell_batcher/common/include/common.hpp"
+#include "kopilov_d_shell_merge/common/include/common.hpp"
 #include "task/include/task.hpp"
 
-namespace kopilov_d_shell_batcher {
+namespace kopilov_d_shell_merge {
 
-class KopilovDShellBatcherMPI : public BaseTask {
+class KopilovDShellMergeMPI : public BaseTask {
  public:
   static constexpr ppc::task::TypeOfTask GetStaticTypeOfTask() {
     return ppc::task::TypeOfTask::kMPI;
   }
 
-  explicit KopilovDShellBatcherMPI(const InType &in) {
+  explicit KopilovDShellMergeMPI(const InType &in) {
     SetTypeOfTask(GetStaticTypeOfTask());
     GetInput() = in;
   }
@@ -31,4 +31,4 @@ class KopilovDShellBatcherMPI : public BaseTask {
   int world_size_{1};
 };
 
-}  // namespace kopilov_d_shell_batcher
+}  // namespace kopilov_d_shell_merge
