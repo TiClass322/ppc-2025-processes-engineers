@@ -2,6 +2,7 @@
 
 #include <mpi.h>
 
+#include <algorithm>
 #include <utility>
 #include <vector>
 
@@ -33,15 +34,16 @@ bool KopilovDRingMPI::RunImpl() {
   if (rank == 0) {
     current_data = GetInput().data;
   }
+  auto apply_offset = [rank](std::vector<int> &data) {
+    std::for_each(data.begin(), data.end(), [rank](int &val) { val += rank; });
+  };
 
   if (world_size > 1) {
     const int next_proc = (rank + 1) % world_size;
     const int prev_proc = (rank - 1 + world_size) % world_size;
 
     if (rank == 0) {
-      for (int &val : current_data) {
-        val += rank;
-      }
+      apply_offset(current_data);
       auto size = static_cast<int>(current_data.size());
       MPI_Send(&size, 1, MPI_INT, next_proc, 0, MPI_COMM_WORLD);
       MPI_Send(current_data.data(), size, MPI_INT, next_proc, 1, MPI_COMM_WORLD);
@@ -54,20 +56,19 @@ bool KopilovDRingMPI::RunImpl() {
       current_data.resize(size);
       MPI_Recv(current_data.data(), size, MPI_INT, prev_proc, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 
-      for (int &val : current_data) {
-        val += rank;
-      }
+      apply_offset(current_data);
 
       MPI_Send(&size, 1, MPI_INT, next_proc, 0, MPI_COMM_WORLD);
       MPI_Send(current_data.data(), size, MPI_INT, next_proc, 1, MPI_COMM_WORLD);
     }
   } else {
-    for (int &val : current_data) {
-      val += rank;
-    }
+    apply_offset(current_data);
   }
 
-  int final_size = (rank == 0) ? static_cast<int>(current_data.size()) : 0;
+  int final_size = 0;
+  if (rank == 0) {
+    final_size = static_cast<int>(current_data.size());
+  }
   MPI_Bcast(&final_size, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
   if (rank != 0) {

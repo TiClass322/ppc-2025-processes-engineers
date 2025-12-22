@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <mpi.h>
 
+#include <cstddef>
 #include <string>
 #include <vector>
 
@@ -44,8 +45,8 @@ class KopilovDRunPerfTestProcesses : public ppc::util::BaseRunPerfTests<InType, 
   }
 
  private:
-  InType input_data_;        // PrivateMemberSuffix: _
-  OutType expected_output_;  // PrivateMemberSuffix: _
+  InType input_data_;
+  OutType expected_output_;
 };
 
 TEST_P(KopilovDRunPerfTestProcesses, RunPerfModes) {
