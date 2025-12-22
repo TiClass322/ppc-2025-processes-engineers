@@ -1,8 +1,6 @@
 #include <gtest/gtest.h>
 
 #include <cstddef>
-#include <utility>
-#include <vector>
 
 #include "kopilov_d_shell_merge/common/include/common.hpp"
 #include "kopilov_d_shell_merge/mpi/include/ops_mpi.hpp"
